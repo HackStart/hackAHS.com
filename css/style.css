@@ -6,22 +6,38 @@ body {
 	width: 100%;
 	margin: 0;
 	padding: 0;
-	height: 100%;
-	z-index: 0;
-	
+	background-color: skyblue;
 }
 
 header {
 	height: 100vh;
+	margin: 0;
 }
 
 section {
-	background: #333;
+	background: #BF1E2E;
 	z-index: 10;
 	position: relative;
 	height: 80vh;
+	margin: 0;
+	padding: 0;
 }
 
+.btn-container::before {
+	position: fixed;
+	transform: translate(-50%);
+	content: "";
+	width: 15px;
+	height: 100%;
+	background-color: #BF1E2E;
+	left: 50%;
+	top: 0px;
+}
+
+.btn-container {
+	position: fixed;
+	z-index: 1;
+}
 
 .logo {
 	transform: translate(-50%, -50%);
@@ -34,7 +50,7 @@ section {
 
 .btn-circle {
 	position: fixed;
-	z-index 7;
+	z-index 50;
 	top: 90%;
 	left: 50%;
 	transform: translate(-50%,-50%);
@@ -43,67 +59,47 @@ section {
 	margin-top: 15px;
 	padding: 7px 16px;
 	font-size: 40px;
+	border-radius: 70px;
+	background-color: #333;
+	border: 10px solid #BF1E2E;
 	-webkit-transition: background .3s ease-in-out;
 	-moz-transition: background .3s ease-in-out;
 	transition: background .3s ease-in-out;
+}
+
+.btn-circle i {
+	position: fixed;
+	transform: translate(-50%);
 }
 
 .btn-circle:hover, .btn-circle:link, .btn-circle:active, .btn-circle:visited {
 	color: #BF1E2E;
 }
 
-.btn-circle::before {
-	border: 10px solid #BF1E2E;
-	z-index: 0;
-	content: "";
-	padding: 0;
-	margin: 0;
-	position: fixed;
-	width: 80px;
-	height: 80px;
-	background-color: #333;
-	top: -5px;
-	left: 50%;
-	transform: translate(-50%);
-	border-radius: 70px;
-}
-
-.btn-circle::after {
-	content: "";
-	z-index: -1;
-	position: fixed;
-	left: 50%;
-	bottom: -100%;
-	width: 15px;
-	height: 1000000px;
-	transform: translate(-50%);
-	background-color: #BF1E2E;
-}
 
 .LHD, .hackAHS {
-	background: url(../img/hackahs.jpg) top center;
 	width: 50%;
+	background-color: #333;
 	height: 100%;
 	position: fixed;
-	filter: gray;
-	-webkit-filter: grayscale(1);
 	-o-transition: .5s;
 	-ms-transition: .5s;
 	-moz-transition: .5s;
 	-webkit-transition: .5s;
 	transition: .5s;
-	
-	z-index: 0;
+	z-index: 1;
 }
 
 .LHD {
-	background: url(../img/lhd.jpg) top center;
-	left: 50%;
+	left:50%;
 }
 
-.hackAHS:hover, .LHD:hover {
-	filter: none;
-	-webkit-filter: grayscale(.75);
+.LHD:hover, .hackAHS:hover {
+	background: rgba(0,0,0,0);
+}
+
+.LHD:hover h2, .hackAHS:hover h1 {
+	color: black;
 }
 
 section h2, .LHD h2, .hackAHS h1 {
@@ -112,6 +108,11 @@ section h2, .LHD h2, .hackAHS h1 {
 	font-size: 3em;
 	color: white;
 	text-align: center;
+	-o-transition: .5s;
+	-ms-transition: .5s;
+	-moz-transition: .5s;
+	-webkit-transition: .5s;
+	transition: .5s;
 }
 
 .LHD h2, .hackAHS h1 {
