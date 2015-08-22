@@ -45,11 +45,8 @@ section {
 .btn-circle {
 	position: fixed;
 	z-index 3;
-	top: 90%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-
-	background-color: #333;
+	top: -15%;
+	
 	width: 70px;
 	height: 70px;
 	margin-top: 15px;
@@ -67,6 +64,20 @@ section {
 .btn-circle:hover, .btn-circle:link, .btn-circle:active, .btn-circle:visited {
 	border: 5px solid #BF1E2E;
 	color: #BF1E2E;
+}
+
+.btn-container {
+	padding: 0;
+	margin: 0;
+	position: fixed;
+	width: 70px;
+	height: 120px;
+	background-color: #333;
+	top: 88.5%;
+	left: 50%;
+	transform: translate(-50%);
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
 }
 
 .LHD, .hackAHS {
