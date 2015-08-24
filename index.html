@@ -558,7 +558,7 @@
 						$('a.scroll-down').bind('click', function(event) {
 							var $anchor = $(this);
 							$('html, body').stop().animate({
-								scrollTop: $('.section').offset().top+5000
+								scrollTop: $('.section').offset().top
 							}, 700, 'easeInOutExpo');
 							event.preventDefault();
 						});
