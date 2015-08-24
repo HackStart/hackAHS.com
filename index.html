@@ -26,15 +26,14 @@
 
 	<body>
 		<header>
+			<img src="img/ahs.png" class="logo"/>
+			
 			<div class="LHD">
 				<h2>Local Hack Day</h2>
 				<h3>Come together with other high school students for twleve hours of learning, community, and building.</h3>
 				<h4>October 10, 2015 <span><i class="fa fa-map-marker"></i></span> Alpharetta, Georgia</h4>
 				<a class="button" href="http://localhackday.mlh.io/" >Register Now!</a>
 			</div>
-			<div class="LHD-under"></div>
-
-			<img src="img/ahs.png" class="logo"/>
 
 			<div class="hackAHS">
 				<h1>hackAHS</h1>
@@ -52,9 +51,9 @@
 		<div id="faq" class="section">
 			<h2>Frequently Asked Questions</h2>
 			<ul class="nav nav-pills">
-				<li class="active"><a data-toggle="pill" href="#Students">Students</a></li>
-				<li><a data-toggle="pill" href="#Parents">Parents</a></li>
-				<li><a data-toggle="pill" href="#Teachers">Teachers</a></li>
+				<li class="active"><a data-toggle="pill" href="#Students" class="scroll-down">Students</a></li>
+				<li><a data-toggle="pill" href="#Parents" class="scroll-down">Parents</a></li>
+				<li><a data-toggle="pill" href="#Teachers" class="scroll-down">Teachers</a></li>
 			</ul>
 
 			<div class="tab-content">
@@ -539,39 +538,56 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/jquery.easing.min.js"></script>
-		<script type="text/javascript">
-			// jQuery for page scrolling feature - requires jQuery Easing plugin
-			$(function() {
-				$('a.page-scroll').bind('click', function(event) {
-					var $anchor = $(this);
-					$('html, body').stop().animate({
-						scrollTop: $($anchor.attr('href')).offset().top - 60
-					}, 700, 'easeInOutExpo');
-					event.preventDefault();
-				});
-			});
 
-			$(".LHD").hover(function(){
-				$(this).css("background-color", "rgba(191,30,46,0)");
-				$(".hackAHS").css("background-color", "rgba(51,51,51,255)");
-				$(".LHD h2").css("color", "black");
-				$(".LHD h3").css("color", "black");
-				$(".LHD h4").css("color", "black");
-				$(".hackAHS h1").css("color", "white");
-				$(".hackAHS h3").css("color", "white");
-				$(".hackAHS h4").css("color", "white");
-			});
-			
-			$(".hackAHS").hover(function(){
-				$(this).css("background-color", "rgba(191,30,46,0)");
-				$(".LHD").css("background-color", "rgba(51,51,51,255)");
-				$(".LHD h2").css("color", "white");
-				$(".LHD h3").css("color", "white");
-				$(".LHD h4").css("color", "white");
-				$(".hackAHS h1").css("color", "black");
-				$(".hackAHS h3").css("color", "black");
-				$(".hackAHS h4").css("color", "black");
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var mq = window.matchMedia('only screen and (max-width: 480px)');
+				if(!mq.matches) {
+					// jQuery for page scrolling feature - requires jQuery Easing plugin
+					$(function() {
+						$('a.page-scroll').bind('click', function(event) {
+							var $anchor = $(this);
+							$('html, body').stop().animate({
+								scrollTop: $($anchor.attr('href')).offset().top
+							}, 700, 'easeInOutExpo');
+							event.preventDefault();
+						});
+					});
+
+					$(function() {
+						$('a.scroll-down').bind('click', function(event) {
+							var $anchor = $(this);
+							$('html, body').stop().animate({
+								scrollTop: $('.section').offset().top+5000
+							}, 700, 'easeInOutExpo');
+							event.preventDefault();
+						});
+					});
+
+					$(".LHD").hover(function(){
+						$(this).css("background-color", "rgba(191,30,46,0)");
+						$(".hackAHS").css("background-color", "rgba(51,51,51,255)");
+						$(".LHD h2").css("color", "black");
+						$(".LHD h3").css("color", "black");
+						$(".LHD h4").css("color", "black");
+						$(".hackAHS h1").css("color", "white");
+						$(".hackAHS h3").css("color", "white");
+						$(".hackAHS h4").css("color", "white");
+					});
+
+					$(".hackAHS").hover(function(){
+						$(this).css("background-color", "rgba(191,30,46,0)");
+						$(".LHD").css("background-color", "rgba(51,51,51,255)");
+						$(".LHD h2").css("color", "white");
+						$(".LHD h3").css("color", "white");
+						$(".LHD h4").css("color", "white");
+						$(".hackAHS h1").css("color", "black");
+						$(".hackAHS h3").css("color", "black");
+						$(".hackAHS h4").css("color", "black");
+					});
+				}
 			});
 		</script>
+
 	</body>
 </html>
