@@ -30,6 +30,16 @@ header {
 	margin: 0;
 }
 
+.social_box {
+	position: fixed;
+	top: 10px;
+	right: 10px; 
+	z-index: 5;
+}
+
+.social {
+	padding: 5px 0px; }
+
 .section {
 	background: #BF1E2E;
 	z-index: 10;
@@ -40,6 +50,14 @@ header {
 	-moz-transition: .5s;
 	-webkit-transition: .5s;
 	transition: .5s;
+	width: 100%;
+	display: inline-block
+}
+
+#contact {
+	background: #333;
+	display: inline-block;
+	width: 100%;
 }
 
 .button, .button:link {
@@ -236,7 +254,45 @@ ul.nav-pills {
 	font-size: 1.2em;
 }
 
+#contact h2 {
+	padding: 0;
+}
+
+#contact ul {
+	text-align: center;
+	width: 100%;
+	padding: 0;
+	margin-bottom: 10px;
+}
+
+#contact ul li {
+	display: inline-block;
+	margin: 0;
+	padding: 5px;
+}
+
+#contact a i {
+	font-size: 300%;
+	color: white;
+	background-color: #222;
+	-o-transition: .2s;
+	-ms-transition: .2s;
+	-moz-transition: .2s;
+	-webkit-transition: .2s;
+	transition: .2s;
+	width: 2em;
+}
+
+#contact a:hover i {
+	color: #333;
+	background-color: white;
+}
+
 @media only screen and (max-width: 480px) {
+	
+	.social_box {
+		display: none;
+	}
 
 	body {
 		position: absolute;
@@ -311,7 +367,7 @@ ul.nav-pills {
 		background-color: rgba(0,0,0,0);
 		color: white;
 	}
-	
+
 	.nav-pills li.active a, .nav-pills>li.active>a:link, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:visited {
 		background-color: #333;
 	}
